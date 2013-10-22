@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0021)http://www.qtshu.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_webname/}">
+<meta name="description" content="{dede:global.cfg_webname/}">
+
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta http-equiv="Window-target" content="_top">
+<meta name="robots" content="all">
+ <link href="{dede:global.cfg_templets_skin/}/css/index.css" type="text/css" rel="stylesheet">
+ <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/index.js"></script>
+
+<link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/favicon.ico">
+
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+<div id="header">
+<div id="headerarea">
+<div id="logo"><h2><a title="小说阅读网" href="./小说阅读网,小说排行榜,好看的小说-奇塔文学网_files/小说阅读网,小说排行榜,好看的小说-奇塔文学网.htm" target="_parent"><strong>小说阅读网</strong></a></h2></div>
+<div id="news">&nbsp;好看的小说尽在小说阅读网</div>
+<div id="search">
+<form action="http://a.qtshu.com/modules/article/search.php" name="searchform" id="form_search_new" onsubmit="if(this.searchkey.value == &#39;搜索小说请输入名称或作者&#39; || this.searchkey.value == &#39;&#39;)return false;" method="get" target="_blank">
+    <input type="text" value="搜索小说请输入名称或作者" name="searchkey" id="searchkey" style="" autocomplete="off" class="searchinput" onblur="if(this.value==&#39;&#39;) {this.value=&#39;搜索小说请输入名称或作者&#39;;this.form.searchkey.style.color=&#39;#D8D8D8&#39;}" onclick="if(this.value==&#39;搜索小说请输入名称或作者&#39;){this.value=&#39;&#39;;this.form.searchkey.style.color=&#39;#000&#39;};">
+    <input type="submit" class="so_book" value=" " name="" onclick="$(&#39;#searchtype&#39;).val(&#39;articlename&#39;);">
+    <input type="submit" class="so_author" value=" " name="" onclick="$(&#39;#searchtype&#39;).val(&#39;author&#39;);">
+    <input type="hidden" name="searchtype" id="searchtype" value="articlename">
+    <div id="suggest1"></div>
+    <div id="cache1"></div>
+</form>
+</div>
+</div>
+</div>
+
+<div class="mainnav">
+	<div class="mainnav_list">
+	    {dede:channel type='top' row='10' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+      	<li><a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a></li>
+      	{/dede:channel}
+		<a href="./小说阅读网,小说排行榜,好看的小说-奇塔文学网_files/小说阅读网,小说排行榜,好看的小说-奇塔文学网.htm" class="on" target="_self" title="小说阅读网">首页</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-1-1.html" target="_self" title="玄幻魔法">玄幻魔法</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-2-1.html" target="_self" title="武侠修真">武侠修真</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_self" title="都市言情">都市言情</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-4-1.html" target="_self" title="历史军事">历史军事</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-5-1.html" target="_self" title="侦探推理">侦探推理</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-6-1.html" target="_self" title="网游动漫">网游动漫</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-7-1.html" target="_self" title="科幻小说">科幻小说</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-8-1.html" target="_self" title="恐怖灵异">恐怖灵异</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-9-1.html" target="_self" title="散文诗词">散文诗词</a>
+        
+		<a href="http://www.qtshu.com/lastupdate-10-1.html" target="_self" title="其他类型">其他类型</a>
+        
+		<a href="http://www.qtshu.com/allvisit-0-1.html" target="_self" title="小说排行榜">排行</a>
+		<a href="http://www.qtshu.com/lastupdate-0-1-1.html" target="_self" title="全本小说">完本</a>
+        <a href="http://www.qtshu.com/lastupdate-0-0-1.html" target="_self" title="连载小说">连载</a>
+		<a href="http://www.qtshu.com/lastupdate-0-1.html" target="_self" title="最新更新">最新更新</a>
+
+	</div>
+</div>
+
+<div class="wrap">
+
+	<div class="mainads textc">
+    <table width="100%">
+        <tbody><tr>
+            <td class="textc"><script type="text/javascript">                                  showads('pageheader1');</script><!--article_pageheader1-->
+<div class="myad_wrap adcomp_gg">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9046430709022222";
+/* 内页横幅1 */
+google_ad_slot = "3489730002";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./js/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+</td>
+            <td class="textc"><script type="text/javascript">                                  showads('pageheader2');</script></td>
+            <td class="textc"><script type="text/javascript">                                  showads('pageheader3');</script></td>
+        </tr>
+    </tbody></table>
+	</div> 	 
+
+</div>  
+
+<div class="wrapper">
+	<div class="colum">
+		<div class="main">
+            <div class="box box_a box_height_1">
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank"><img src="./images/23s.jpg" title="斗破苍穹" alt="斗破苍穹"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank">斗破苍穹</a></h1>
+                <div class="author">作者：天蚕土豆</div>
+                <div class="Intro"><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank">    这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！想要知道异界的斗气在发...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.zhetian.org/" title="遮天" target="_blank"><img src="./images/22s.jpg" title="遮天" alt="遮天"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.zhetian.org/" title="遮天" target="_blank">遮天</a></h1>
+                <div class="author">作者：辰东</div>
+                <div class="Intro"><a href="http://www.zhetian.org/" title="遮天" target="_blank">    冰冷与黑暗并存的宇宙深处，九具庞大的龙尸拉着一口青铜古棺，亘古长存。这是太空探测器在枯寂的宇宙...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank"><img src="./images/371s.jpg" title="斗破苍穹续集" alt="斗破苍穹续集"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank">斗破苍穹续集</a></h1>
+                <div class="author">作者：斗破苍穹 斗破苍穹续集</div>
+                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank">将不断推出斗破最新大集合，一部连载完接一部，让好看不断！ 
+苍穹续本，再创辉煌。 
+斗帝空间，谁主沉...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank"><img src="./images/34s.jpg" title="凡人修仙传" alt="凡人修仙传"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank">凡人修仙传</a></h1>
+                <div class="author">作者：忘语</div>
+                <div class="Intro"><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank">    一个普通山村小子，偶然下进入到当地江湖小门派，成了一名记名弟子。他以这样身份，如何在门派中立足...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank"><img src="./images/26s.jpg" title="斗破苍穹续集之再破苍穹" alt="斗破苍穹续集之再破苍穹"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank">斗破苍穹续集之再破苍穹</a></h1>
+                <div class="author">作者：李癫疯</div>
+                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank">    五帝破空，新的世界，一路拼搏，弑神灭帝，血雨腥风，擎天捍地，震动六合，问鼎乾坤，再踏巅峰，破神...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank"><img src="./images/25s.jpg" title="吞噬星空" alt="吞噬星空"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank">吞噬星空</a></h1>
+                <div class="author">作者：我吃西红柿</div>
+                <div class="Intro"><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank">    一个武者主宰的地球，人类和野兽都开始了新的进化，残酷的生死战斗从此揭开。地球的各个角落危机四伏...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank"><img src="./images/37s.jpg" title="神印王座" alt="神印王座"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank">神印王座</a></h1>
+                <div class="author">作者：唐家三少</div>
+                <div class="Intro"><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank">    魔族强势，在人类即将被灭绝之时，六大圣殿崛起，带领着人类守住最后的领土。一名少年，为救母加入骑...</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank"><img src="./images/36s.jpg" title="武动乾坤" alt="武动乾坤"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank">武动乾坤</a></h1>
+                <div class="author">作者：天蚕土豆</div>
+                <div class="Intro"><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank">    修炼一途，乃窃阴阳，夺造化，转涅盘，握生死，掌轮回。武之极，破苍穹，动乾坤！</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.swang8.com/" title="圣王" target="_blank"><img src="./images/33s.jpg" title="圣王" alt="圣王"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.swang8.com/" title="圣王" target="_blank">圣王</a></h1>
+                <div class="author">作者：梦入神机</div>
+                <div class="Intro"><a href="http://www.swang8.com/" title="圣王" target="_blank">    圣者以脊梁撑起天堂中的诸神，王者以力量镇压地狱中的群魔，天地之间，唯有圣王。</a></div>
+            </div>
+        </div>
+        
+        <div class="book_Recommended">
+            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank"><img src="./images/nocover.jpg" title="斗破苍穹2" alt="斗破苍穹2"></a></div>
+            <div class="book_Recommended_text">
+                <h1><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank">斗破苍穹2</a></h1>
+                <div class="author">作者：唐空</div>
+                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank">萧炎带领着众人来到了一片新的世界&lt;br /&gt;22种异火齐聚一身&lt;br /&gt;帝火出现&lt;br /&gt;！&lt;br /&gt;焚绝究竟是谁所创？&lt;br /&gt;萧...</a></div>
+            </div>
+        </div>
+        
+                <div class="clear"></div>
+</div>
+		</div>
+		<div class="side">
+			<div class="box box_height_2">
+				<div class="box_tt"><h2>小说阅读网 好看的小说    推荐小说</h2></div>
+				<div class="box_con">
+					<div class="list_col2">
+						<ol class="ranklist ranklist_txt">
+                            
+<li class="top1"><em>1</em><a href="http://www.daizhuzai.com/" title="大主宰" target="_blank">大主宰</a></li>
+
+<li class="top2"><em>2</em><a href="http://www.qtshu.com/mhj/" title="莽荒纪" target="_blank">莽荒纪</a></li>
+
+<li class="top3"><em>3</em><a href="http://www.qtshu.com/qiumo/" title="求魔" target="_blank">求魔</a></li>
+
+<li class="top4"><em>4</em><a href="http://www.qtshu.com/douluodalu/" title="斗罗大陆" target="_blank">斗罗大陆</a></li>
+
+<li class="top5"><em>5</em><a href="http://www.qtshu.com/panlong/" title="盘龙" target="_blank">盘龙</a></li>
+
+<li class="top6"><em>6</em><a href="http://www.qtshu.com/csj/" title="长生界" target="_blank">长生界</a></li>
+
+<li class="top7"><em>7</em><a href="http://www.qtshu.com/qindi/" title="琴帝" target="_blank">琴帝</a></li>
+
+<li class="top8"><em>8</em><a href="http://www.zhetian.org/" title="遮天" target="_blank">遮天</a></li>
+
+<li class="top9"><em>9</em><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank">武动乾坤</a></li>
+
+<li class="top10"><em>10</em><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank">凡人修仙传</a></li>
+
+<li class="top11"><em>11</em><a href="http://www.qtshu.com/asjct/" title="傲世九重天" target="_blank">傲世九重天</a></li>
+
+<li class="top12"><em>12</em><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank">神印王座</a></li>
+
+<li class="top13"><em>13</em><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank">吞噬星空</a></li>
+
+<li class="top14"><em>14</em><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank">斗破苍穹</a></li>
+
+<li class="top15"><em>15</em><a href="http://www.qtshu.com/tscq/" title="吞噬苍穹" target="_blank">吞噬苍穹</a></li>
+
+<li class="top16"><em>16</em><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank">斗破苍穹续集之再破苍穹</a></li>
+
+<li class="top17"><em>17</em><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank">斗破苍穹2</a></li>
+
+<li class="top18"><em>18</em><a href="http://www.doupocangqiong1.com/dpcqzwsdf/" title="斗破苍穹之无上巅峰" target="_blank">斗破苍穹之无上巅峰</a></li>
+
+<li class="top19"><em>19</em><a href="http://www.tunsxk.com/tsxkxjgjsz/" title="吞噬星空续集：钢甲圣尊" target="_blank">吞噬星空续集：钢甲圣尊</a></li>
+
+<li class="top20"><em>20</em><a href="http://www.qtshu.com/dpcqe/" title="斗破苍穹二" target="_blank">斗破苍穹二</a></li>
+
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box box_a box_fullcol box_coop">
+		<div class="box_con">
+			<h2>小说阅读网 好看的小说 最近更新</h2>
+			<div class="colmain">
+				
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/zqs/" title="最权商" class="f14" target="_blank">最权商</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/zqs/1414414.html" target="_blank" title="《最权商》第431章 分家">第431章 分家</a></li>
+<li class="ro3">大秦骑兵</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/leshenwudi/" title="乐神无敌" class="f14" target="_blank">乐神无敌</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/leshenwudi/1413982.html" target="_blank" title="《乐神无敌》第二百五十五章 交锋黄总监">第二百五十五章 交锋黄总监</a></li>
+<li class="ro3">一桶布丁</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/cjxjfs/" title="超级玄龟分身" class="f14" target="_blank">超级玄龟分身</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/cjxjfs/1413726.html" target="_blank" title="《超级玄龟分身》新书已审核完毕，可以找到了！">新书已审核完毕，可以找到了！</a></li>
+<li class="ro3">公子翟</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/flst/" title="风流仕途" class="f14" target="_blank">风流仕途</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/flst/1413386.html" target="_blank" title="《风流仕途》第一千零五十四章 开锣唱大戏。（二）">第一千零五十四章 开锣唱大戏。（二）</a></li>
+<li class="ro3">那年听风</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/hhzyzxd/" title="护花状元在现代" class="f14" target="_blank">护花状元在现代</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/hhzyzxd/1412312.html" target="_blank" title="《护花状元在现代》第七百零八章 你妈没教过你要敲门吗？">第七百零八章 你妈没教过你要敲门吗？</a></li>
+<li class="ro3">梁少</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/dzdyjf/" title="打造电影教父" class="f14" target="_blank">打造电影教父</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/dzdyjf/1411593.html" target="_blank" title="《打造电影教父》311.《无极》首映礼（上）">311.《无极》首映礼（上）</a></li>
+<li class="ro3">万乘北宸</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/dxjdtsbb/" title="大小姐的贴身保镖" class="f14" target="_blank">大小姐的贴身保镖</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/dxjdtsbb/1411278.html" target="_blank" title="《大小姐的贴身保镖》【第499章：东宫西宫】">【第499章：东宫西宫】</a></li>
+<li class="ro3">西闷庆</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/dszwktc/" title="都市之纨绔天才" class="f14" target="_blank">都市之纨绔天才</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/dszwktc/1410773.html" target="_blank" title="《都市之纨绔天才》第859章 终章">第859章 终章</a></li>
+<li class="ro3">九月阳光</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/guidiannao/" title="诡电脑" class="f14" target="_blank">诡电脑</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/guidiannao/1409913.html" target="_blank" title="《诡电脑》第763章 新的征程（大结局）">第763章 新的征程（大结局）</a></li>
+<li class="ro3">奥比椰</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/cjbw/" title="超级兵王" class="f14" target="_blank">超级兵王</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/cjbw/1409149.html" target="_blank" title="《超级兵王》第2506章 威风">第2506章 威风</a></li>
+<li class="ro3">明朝无酒</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/wdtsxh/" title="我的贴身校花" class="f14" target="_blank">我的贴身校花</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/wdtsxh/1409141.html" target="_blank" title="《我的贴身校花》2937 尽显无疑">2937 尽显无疑</a></li>
+<li class="ro3">带玉</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/dsdgs/" title="都市大高手" class="f14" target="_blank">都市大高手</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/dsdgs/1409123.html" target="_blank" title="《都市大高手》第五百九十五章 张扬来临">第五百九十五章 张扬来临</a></li>
+<li class="ro3">老鹰吃小鸡</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/cgfh/" title="草根富豪" class="f14" target="_blank">草根富豪</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/cgfh/1408528.html" target="_blank" title="《草根富豪》第一百二十四章 再遇">第一百二十四章 再遇</a></li>
+<li class="ro3">零青城</li><li class="ro4">13-10-15</li>
+</ul>
+
+<ul>
+<li class="ro0">[<a href="http://www.qtshu.com/lastupdate-3-1.html" target="_blank" title="都市言情小说">都市言情</a>]</li>
+<li class="ro1"><a href="http://www.qtshu.com/tzsy/" title="特战神医" class="f14" target="_blank">特战神医</a></li>
+<li class="ro2"><a href="http://www.qtshu.com/tzsy/1408401.html" target="_blank" title="《特战神医》第451章 你愿意一起面对困难吗">第451章 你愿意一起面对困难吗</a></li>
+<li class="ro3">未来三天</li><li class="ro4">13-10-15</li>
+</ul>
+
+			</div>
+			<div class="colside">
+                
+<div class="comment"><div class="imgtxt"><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" class="pic"><img src="./images/23s.jpg" title="斗破苍穹" alt="斗破苍穹"></a><h3><a href="http://www.doupocangqiong1.com/" title="斗破苍穹">斗破苍穹</a></h3><ul><li>作者:<span>天蚕土豆</span></li><li>状态:<span>已完成</span></li><li>主角:<span>小说阅读网</span></li><li>时间:<span>13-04-02</span></li><li><a href="http://www.doupocangqiong1.com/info_dpcqqwyd.html" title="查看斗破苍穹详情" class="more">查看详情&gt;&gt;</a></li></ul></div></div>
+
+<div class="comment"><div class="imgtxt"><a href="http://www.qtshu.com/sywz/" title="神印王座" class="pic"><img src="./images/37s.jpg" title="神印王座" alt="神印王座"></a><h3><a href="http://www.qtshu.com/sywz/" title="神印王座">神印王座</a></h3><ul><li>作者:<span>唐家三少</span></li><li>状态:<span>已完成</span></li><li>主角:<span>小说阅读网</span></li><li>时间:<span>13-10-06</span></li><li><a href="http://www.qtshu.com/sywz/info_sywz.html" title="查看神印王座详情" class="more">查看详情&gt;&gt;</a></li></ul></div></div>
+
+<div class="comment"><div class="imgtxt"><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" class="pic"><img src="./images/371s.jpg" title="斗破苍穹续集" alt="斗破苍穹续集"></a><h3><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集">斗破苍穹续集</a></h3><ul><li>作者:<span>斗破苍穹 斗破苍穹续集</span></li><li>状态:<span>连载中</span></li><li>主角:<span>小说阅读网</span></li><li>时间:<span>13-04-17</span></li><li><a href="http://www.doupocangqiong1.com/dpcqxj/info_dpcqxj.html" title="查看斗破苍穹续集详情" class="more">查看详情&gt;&gt;</a></li></ul></div></div>
+
+			</div>
+		</div>
+	</div>
+	<div class="box box_a box_fullcol box_link">
+		<div class="box_con">
+			<h2>小说阅读网 好看的小说 友情链接</h2>
+			<div class="dd">
+            <ul>
+                <li><a href="http://www.doupocangqiong1.com/" target="_blank">斗破苍穹全文阅读</a></li><li><a href="./小说阅读网,小说排行榜,好看的小说-奇塔文学网_files/小说阅读网,小说排行榜,好看的小说-奇塔文学网.htm" target="_blank">好看的小说</a></li><li><a href="http://www.tunsxk.com/" target="_blank">吞噬星空全文阅读</a></li><li><a href="http://www.swang8.com/" target="_blank">圣王最新章节</a></li><li><a href="http://www.frxxz.org/" target="_blank">凡人修仙传</a></li><li><a href="./小说阅读网,小说排行榜,好看的小说-奇塔文学网_files/小说阅读网,小说排行榜,好看的小说-奇塔文学网.htm" target="_blank">小说阅读网</a></li><li><a href="http://www.aisxs.net/" target="_blank">爱上小说网</a></li><li><a href="http://www.aoshijiuchongtian.net/" target="_blank">傲视九重天</a></li>
+	        </ul>
+	  		</div>
+			<div class="dd">
+            <!--wtseolink-->&nbsp;<a target="_blank" class="seo_flink" href="http://www.swang8.com/">圣王最新章节</a>&nbsp;&nbsp;<a target="_blank" class="seo_flink" href="http://www.frxxz.org/">凡人修仙传</a>&nbsp;&nbsp;<!--end wtseolink-->
+	  		</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- *****尾部 begin***** -->
+<div class="footer">
+	<div class="copyright">
+        
+        <div id="pagebuttomad3" class="ad_div">
+        <table width="100%">
+            <tbody><tr>
+                <td class="textc"><script type="text/javascript">                                                    showads('footerad1');</script></td>
+                <td class="textc"><script type="text/javascript">                                                    showads('footerad2');</script></td>
+                <td class="textc"><script type="text/javascript">                                                    showads('footerad3');</script></td>
+            </tr>
+        </tbody></table>
+        </div>
+	    <p>本站小说章节皆由网友收集于互联网，仅供在线学习交流之用，版权归原作者所有</p>
+		<p>本站所收录作品、话题、评论及本站所做之广告均属其个人行为，与本站立场无关</p>
+        <p>如无意中侵犯您的权益，请及时联系我们（<a rel="nofollow" href="mailto:"></a>）删除相关内容。</p>
+		<p>Copyright &#169; 2012～2022 <span class="spana" onclick="document.location.href=&#39;http://www.qtshu.com/&#39;" title="小说阅读网">小说阅读网</span> All Rights Reserved.</p>
+	
+	</div>
+        <div class="tongji"></div>
+</div>
+
+<script>    show_runme();</script>
+
+
+
+<!-- *****尾部 end***** -->
+<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6448280"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+
+<script type="text/javascript" id="ScriptBottom">   
+
+
+showads('footerscript');showads('sharescript');</script>
+<script type="text/javascript" id="ScriptStat">    showstat();</script><!--default--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?726dafde1ca84e6b92a2710cddc694c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+</body></html>
