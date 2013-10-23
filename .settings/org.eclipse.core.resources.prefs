@@ -2,4 +2,6 @@ eclipse.preferences.version=1
 encoding//test/templets/default/footer.htm=UTF-8
 encoding//test/templets/default/head.htm=UTF-8
 encoding//test/templets/default/index.htm=UTF-8
+encoding//test/templets/default/list_article.htm=UTF-8
+encoding//test/templets/readnovel/list_catelog.htm=UTF-8
 encoding/<project>=UTF-8
