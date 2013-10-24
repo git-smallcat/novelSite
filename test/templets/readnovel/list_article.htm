@@ -206,20 +206,20 @@
 	                   <li class="li8"></li>
 	                </ul>
 	                
-	                {dede:channel type='son'}
+	                {dede:list pagesize='2' titlenlen='30'}
 	                	<ul class="booksList9_ul">
 	   						<li class="li1"></li>
-	   						<li class="li2"><a href="./最近更新,都市言情,小说阅读网,小说排行榜,好看的小说-奇塔文学网_files/最近更新,都市言情,小说阅读网,小说排行榜,好看的小说-奇塔文学网.htm" target="_blank" title="都市言情小说">都市言情</a></li>
-	   						<li class="li3">[<a href="http://www.qtshu.com/glhy/info_glhy.html" target="_blank" class="mul" title="官路红颜最新章节">最新章节</a>] <a href="[field:typeurl/]" target="_blank" title="[field:typeurl/]">[field:typeurl/]</a></li>
-	   						<li class="li4"><a href="http://www.qtshu.com/glhy/1415417.html" target="_blank" title="《官路红颜》第七百四十四章 清白之躯">第七百四十四章 清白之躯</a></li>
-	   						<li class="li5">13-10-16</li>
-	   						<li class="li6">江南活水</li>
+	   						<li class="li2"><a href="[field:typeurl/]" target="_blank" title="[field:typename/]">[field:typename/]</a></li>
+	   						<li class="li3">[<a href="[field:arcurl/]"" target="_blank" class="mul" title="官路红颜最新章节">最新章节</a>] <a href="[field:typeurl/]" target="_blank" title="[field:typename/]">[field:typename/]</a></li>
+	   						<li class="li4"><a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a></li>
+	   						<li class="li5">[field:pubdate function=MyDate('m-d',@me)/]</li>
+	   						<li class="li6">[field:writer/]</li>
 	   						<li class="li7">连载中</li>
 	   						<li class="li8"></li>
 						</ul>
-      					<li><a href='[field:typeurl/]'>[field:typename/]</a></li>
-      				{/dede:channel}
-
+	                {/dede:list}
+	                
+	                {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="1"/}
 
 				</div> 
                 <div id="_ctl0_pager" class="mypager pagelink" style="">

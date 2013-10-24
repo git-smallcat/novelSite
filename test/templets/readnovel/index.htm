@@ -13,7 +13,21 @@
  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/index.js"></script>
 
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
 <link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/favicon.ico">
+
+<script>
+function multi(pagenum,tagid)
+{
+var taget_obj = document.getElementById(tagid);
+var taget_obj_page = document.getElementById("page_"+tagid);
+myajax = new DedeAjax(taget_obj,false,false,'','','');
+myajax.SendGet2("{dede:global.cfg_cmsurl/}/plus/arcmulti.php?mtype=0&pnum="+pagenum+'&tagid='+tagid);
+myajax = new DedeAjax(taget_obj_page,false,false,'','','');
+myajax.SendGet2("{dede:global.cfg_cmsurl/}/plus/arcmulti.php?mtype=1&pnum="+pagenum+'&tagid='+tagid);
+DedeXHTTP = null;
+}
+</script>
 
 </head>
 <body>
@@ -181,15 +195,16 @@
 			<h2>小说阅读网 好看的小说 最近更新</h2>
 			<div class="colmain">
 			
-			{dede:arclist flag='c' titlelen=42 row='16' tagid='dedecms' pagesize='8'}
+			{dede:arclist  titlelen=42 row='16' typeid='1' onearctype='Y' getall}
+								
 				<ul>
-					<li class="ro0">[<a href="[field:arcurl/]" target="_blank" title="都市言情小说">都市言情</a>]</li>
-					<li class="ro1"><a href="[field:arcurl/]" title="最权商" class="f14" target="_blank">最权商</a></li>
-					<li class="ro2"><a href="[field:arcurl/]" target="_blank" title="《最权商》第431章 分家">[field:title/]</a></li>
-					<li class="ro3">大秦骑兵</li><li class="ro4">[field:pubdate function=MyDate('m-d',@me)/]</li>
+					<li class="ro0">[<a href="[field:typeid Function='GetTopLink(@me)'/]" target="_blank" title="[field:typeid Function='GetTopName(@me)'/]">[field:typeid Function='GetTopName(@me)'/]</a>]</li>
+					<li class="ro1"><a href="[field:typelink /]" title="[field:typename /]" class="f14" target="_blank">[field:typename /]</a></li>
+					<li class="ro2"><a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a></li>
+					<li class="ro3">[field:writer/]</li><li class="ro4">[field:pubdate function=MyDate('m-d',@me)/]</li>
 				</ul>
       		{/dede:arclist}	  				
-
+      		
 			</div>
 			
 			<!-- 右推荐 -->
@@ -239,7 +254,9 @@
 
 
 showads('footerscript');showads('sharescript');</script>
-<script type="text/javascript" id="ScriptStat">    showstat();</script><!--default--><script>
+<script type="text/javascript" id="ScriptStat">    showstat();</script><!--default-->
+<!-- 
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
