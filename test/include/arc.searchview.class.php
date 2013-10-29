@@ -35,7 +35,7 @@ class SearchView
     var $TotalPage;
     var $TotalResult;
     var $PageSize;
-    var $ChannelType;
+//     var $ChannelType;
     var $TempInfos;
     var $Fields;
     var $PartView;
@@ -97,35 +97,21 @@ class SearchView
         $this->dtp2->SetNameSpace("field","[","]");
         $this->TypeLink = new TypeLink($typeid);
         // 通过分词获取关键词
-        $this->Keywords = $this->GetKeywords($keyword);
+//         $this->Keywords = $this->GetKeywords($keyword);
+        $this->Keywords = $keyword;
 
         //设置一些全局参数的值
-        if($this->TypeID=="0"){
-            $this->ChannelTypeid=1;
-        }else{
-            $row =$this->dsql->GetOne("SELECT channeltype FROM `#@__arctype` WHERE id={$this->TypeID}");
-            $this->ChannelTypeid=$row['channeltype'];
-        }
+//         if($this->TypeID=="0"){
+//             $this->ChannelTypeid=1;
+//         }else{
+//             $row =$this->dsql->GetOne("SELECT channeltype FROM `#@__arctype` WHERE id={$this->TypeID}");
+//             $this->ChannelTypeid=$row['channeltype'];
+//         }
         foreach($GLOBALS['PubFields'] as $k=>$v)
         {
             $this->Fields[$k] = $v;
         }
-        if ($cfg_sphinx_article == 'Y')
-        {
-            // 初始化sphinx
-            $this->sphinx = new SphinxClient;
-            
-            $mode = SPH_MATCH_EXTENDED2;            //匹配模式
-            $ranker = SPH_RANK_PROXIMITY_BM25; //统计相关度计算模式，仅使用BM25评分计算
-            $this->sphinx->SetServer($GLOBALS['cfg_sphinx_host'], $GLOBALS['cfg_sphinx_port']);
-            $this->sphinx->SetArrayResult(true);
-            $this->sphinx->SetMatchMode($mode);
-            $this->sphinx->SetRankingMode($ranker);
-            
-            $this->CountRecordSphinx();
-        } else {
-            $this->CountRecord();
-        }
+        $this->CountRecord();
         
         
         $tempfile = $GLOBALS['cfg_basedir'].$GLOBALS['cfg_templets_dir']."/".$GLOBALS['cfg_df_style']."/search.htm";
@@ -135,8 +121,9 @@ class SearchView
             exit();
         }
         $this->dtp->LoadTemplate($tempfile);
-        $this->TempInfos['tags'] = $this->dtp->CTags;
-        $this->TempInfos['source'] = $this->dtp->SourceString;
+        //TODO 用途？？？
+//         $this->TempInfos['tags'] = $this->dtp->CTags;
+//         $this->TempInfos['source'] = $this->dtp->SourceString;
         if($this->PageSize=="")
         {
             $this->PageSize = 20;
@@ -235,12 +222,12 @@ class SearchView
             }
             $k = addslashes($k);
             if($this->ChannelType < 0 || $this->ChannelTypeid < 0){
-                $kwsqls[] = " arc.title LIKE '%$k%' ";
+                $kwsqls[] = " act.typename LIKE '%$k%' ";
             }else{
                 if($this->SearchType=="title"){
-                    $kwsqls[] = " arc.title LIKE '%$k%' ";
-                }else{
-                    $kwsqls[] = " CONCAT(arc.title,' ',arc.writer,' ',arc.keywords) LIKE '%$k%' ";
+                    $kwsqls[] = " act.typename LIKE '%$k%' ";
+                }else if($this->SearchType=="author"){
+                    $kwsqls[] = " arc.writer LIKE '%$k%' ";
                 }
             }
         }
@@ -423,26 +410,22 @@ class SearchView
         {
             $ksqls[] = " typeid IN (".GetSonIds($this->TypeID).") ";
         }
-        if($this->ChannelType > 0)
-        {
-            $ksqls[] = " arc.channel='".$this->ChannelType."'";
-        }
-        if($this->mid > 0)
-        {
-            $ksqls[] = " arc.mid = '".$this->mid."'";
-        }
+       
         $ksqls[] = " arc.arcrank > -1 ";
+        $ksqls[] = " arc.id in (select max(id) from dede_archives group by typeid) ";
+        
         $this->AddSql = ($ksql=='' ? join(' AND ',$ksqls) : join(' AND ',$ksqls)." AND ($ksql)" );
-        if($this->ChannelType < 0 || $this->ChannelTypeid< 0){
-            if($this->ChannelType=="0") $id=$this->ChannelTypeid;
-            else $id=$this->ChannelType;
-            $row = $this->dsql->GetOne("SELECT addtable FROM `#@__channeltype` WHERE id=$id");
-            $addtable = trim($row['addtable']);
-            $this->AddTable=$addtable;
-        }else{
-            $this->AddTable="#@__archives";
-        }
-        $cquery = "SELECT * FROM `{$this->AddTable}` arc WHERE ".$this->AddSql;
+//         if($this->ChannelType < 0 || $this->ChannelTypeid< 0){
+//             if($this->ChannelType=="0") $id=$this->ChannelTypeid;
+//             else $id=$this->ChannelType;
+//             $row = $this->dsql->GetOne("SELECT addtable FROM `#@__channeltype` WHERE id=$id");
+//             $addtable = trim($row['addtable']);
+//             $this->AddTable=$addtable;
+//         }else{
+//             $this->AddTable="#@__archives";
+//         }
+        $this->AddTable="#@__archives";
+        $cquery = "SELECT * FROM `{$this->AddTable}` arc INNER JOIN #@__arctype act ON arc.typeid=act.id WHERE ".$this->AddSql;
         //var_dump($cquery);
         $hascode = md5($cquery);
         $row = $this->dsql->GetOne("SELECT * FROM `#@__arccache` WHERE `md5hash`='".$hascode."' ");
@@ -611,65 +594,65 @@ class SearchView
             $innertext = GetSysTemplets("search_list.htm");
         }
         
-        if ($cfg_sphinx_article == 'Y')
-        {
-            $ordersql = '';
-            if($this->ChannelType< 0 ||$this->ChannelTypeid< 0)
-            {
-                if($orderby=="id"){
-                    $ordersql="@id desc";
-                }else{
-                    $ordersql="@senddate desc";
-                }
-            } else {
-                if($orderby=="senddate")
-                {
-                    $ordersql="@senddate desc";
-                }
-                else if($orderby=="pubdate")
-                {
-                    $ordersql="@pubdate desc";
-                }
-                else if($orderby=="id")
-                {
-                    $ordersql="@id desc";
-                }
-                else
-                {
-                    $ordersql="@sortrank desc";
-                }
-            }
+//        if ($cfg_sphinx_article == 'Y')
+//         {
+//             $ordersql = '';
+//             if($this->ChannelType< 0 ||$this->ChannelTypeid< 0)
+//             {
+//                 if($orderby=="id"){
+//                     $ordersql="@id desc";
+//                 }else{
+//                     $ordersql="@senddate desc";
+//                 }
+//             } else {
+//                 if($orderby=="senddate")
+//                 {
+//                     $ordersql="@senddate desc";
+//                 }
+//                 else if($orderby=="pubdate")
+//                 {
+//                     $ordersql="@pubdate desc";
+//                 }
+//                 else if($orderby=="id")
+//                 {
+//                     $ordersql="@id desc";
+//                 }
+//                 else
+//                 {
+//                     $ordersql="@sortrank desc";
+//                 }
+//             }
             
-            $this->sphinx->SetLimits($limitstart, (int)$row, ($row>1000) ? $row : 1000);
-            $res = array();
-            $res = AutoCharset($this->sphinx->Query($this->Keywords, 'mysql, delta'), 'utf-8', 'gbk');
+//             $this->sphinx->SetLimits($limitstart, (int)$row, ($row>1000) ? $row : 1000);
+//             $res = array();
+//             $res = AutoCharset($this->sphinx->Query($this->Keywords, 'mysql, delta'), 'utf-8', 'gbk');
             
-            foreach ($res['words'] as $k => $v) {
-                $this->Keywords .= " $k";
-            }
-            foreach($res['matches'] as $_v) {
-                $aids[] = $_v['id'];
-            }
+//             foreach ($res['words'] as $k => $v) {
+//                 $this->Keywords .= " $k";
+//             }
+//             foreach($res['matches'] as $_v) {
+//                 $aids[] = $_v['id'];
+//             }
             
-            $aids = @implode(',', $aids);
+//             $aids = @implode(',', $aids);
             
-            //搜索
-            $query = "SELECT arc.*,act.typedir,act.typename,act.isdefault,act.defaultname,act.namerule,
-            act.namerule2,act.ispart,act.moresite,act.siteurl,act.sitepath
-            FROM `#@__archives` arc LEFT JOIN `#@__arctype` act ON arc.typeid=act.id
-            WHERE arc.id IN ($aids)";
+//             //搜索
+//             $query = "SELECT arc.*,act.typedir,act.typename,act.isdefault,act.defaultname,act.namerule,
+//             act.namerule2,act.ispart,act.moresite,act.siteurl,act.sitepath
+//             FROM `#@__archives` arc LEFT JOIN `#@__arctype` act ON arc.typeid=act.id
+//             WHERE arc.id IN ($aids)";
             
-        } else {
+//         } else {
             //排序方式
             $ordersql = '';
-            if($this->ChannelType< 0 ||$this->ChannelTypeid< 0)
-            {
-                if($orderby=="id"){
-                    $ordersql="ORDER BY arc.aid desc";
-                }else{
-                    $ordersql="ORDER BY arc.senddate desc";
-                }
-            } else {
+//             if($this->ChannelType< 0 ||$this->ChannelTypeid< 0)
+//             {
+//                 if($orderby=="id"){
+//                     $ordersql="ORDER BY arc.aid desc";
+//                 }else{
+//                     $ordersql="ORDER BY arc.senddate desc";
+//                 }
+//             } else {
                 if($orderby=="senddate")
                 {
                     $ordersql=" ORDER BY arc.senddate desc";
@@ -686,15 +669,16 @@ class SearchView
                 {
                     $ordersql=" ORDER BY arc.sortrank desc";
                 }
-            }
+//             }
 
             //搜索
             $query = "SELECT arc.*,act.typedir,act.typename,act.isdefault,act.defaultname,act.namerule,
             act.namerule2,act.ispart,act.moresite,act.siteurl,act.sitepath
             FROM `{$this->AddTable}` arc LEFT JOIN `#@__arctype` act ON arc.typeid=act.id
             WHERE {$this->AddSql} $ordersql LIMIT $limitstart,$row";
-        }
+//         } 
         
+//         $query = " SELECT * FROM #@__archives arc INNER JOIN #@__arctype act ON arc.typeid=act.id where arc.id in (select max(id) from #@__archives group by typeid) and act.typename like '%%';";
         $this->dsql->SetQuery($query);
         $this->dsql->Execute("al");
         $artlist = "";

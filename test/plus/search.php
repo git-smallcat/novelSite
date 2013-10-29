@@ -11,6 +11,7 @@
  */
 require_once(dirname(__FILE__)."/../include/common.inc.php");
 require_once(DEDEINC."/arc.searchview.class.php");
+require_once(DEDEINC."/arc.special.searchview.class.php");
 
 $pagesize = (isset($pagesize) && is_numeric($pagesize)) ? $pagesize : 10;
 $typeid = (isset($typeid) && is_numeric($typeid)) ? $typeid : 0;
@@ -106,6 +107,7 @@ else
 $t1 = ExecTime();
 
 $sp = new SearchView($typeid,$keyword,$orderby,$channeltype,$searchtype,$starttime,$pagesize,$kwtype,$mid);
+// $sp = new SpecialSearchView($keyword);
 $keyword = $oldkeyword;
 $sp->Display();
 

@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
+encoding//templets/src/js/89f2296a88a820e1f0cc1797d15ab8e1.js=GBK
 encoding//test/templets/default/footer.htm=UTF-8
 encoding//test/templets/default/head.htm=UTF-8
 encoding//test/templets/default/index.htm=UTF-8
 encoding//test/templets/default/index_article.htm=UTF-8
 encoding//test/templets/default/list_article.htm=UTF-8
+encoding//test/templets/default/search.htm=UTF-8
 encoding//test/templets/readnovel/list_catelog.htm=UTF-8
+encoding//test/templets/readnovel/search.htm=UTF-8
 encoding/<project>=UTF-8

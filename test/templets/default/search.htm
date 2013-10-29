@@ -41,7 +41,7 @@
     </div>
 		<div class="resultlist">
 			<ul>
-             {dede:list perpage='20'}
+             {dede:list pagesize="2"}
 				<li>      				
 					<h3><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h3>
                     <p>[field:description/]...</p>
@@ -56,7 +56,7 @@
 			</ul>
 			<div class="fl dede_pages">
 			<ul class="pagelist">
-            	{dede:pagelist listsize='4'/}  
+            	{dede:pagelist listsize='1'/}  
 			</ul>
 		</div><!-- /pages -->
 		</div><!-- /listbox -->
