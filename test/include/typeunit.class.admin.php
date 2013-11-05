@@ -148,6 +148,7 @@ class TypeUnit
                 echo "|<a href='catalog_do.php?cid={$id}&dopost=listArchives'>内容</a>";
                 echo "|<a href='catalog_add.php?id={$id}'>增加子类</a>";
                 echo "|<a href='catalog_edit.php?id={$id}'>更改</a>";
+                echo "|<a href='catalog_extra.php?id={$id}'>额外信息</a>";
                 echo "|<a href='catalog_do.php?dopost=moveCatalog&typeid={$id}'>移动</a>";
                 echo "|<a href='catalog_del.php?id={$id}&typeoldname=".urlencode($typeName)."'>删除</a>";
                 echo "&nbsp; <input type='text' name='sortrank{$id}' value='{$rank}' style='width:25px;height:20px'></td></tr></table></td></tr>\r\n";
@@ -250,6 +251,7 @@ class TypeUnit
                     echo "|<a href='catalog_do.php?cid={$id}&dopost=listArchives'>内容</a>";
                     echo "|<a href='catalog_add.php?id={$id}'>增加子类</a>";
                     echo "|<a href='catalog_edit.php?id={$id}'>更改</a>";
+                    echo "|<a href='catalog_extra.php?id={$id}'>额外信息</a>";
                     echo "|<a href='catalog_do.php?dopost=moveCatalog&typeid={$id}'>移动</a>";
                     echo "|<a href='catalog_del.php?id={$id}&typeoldname=".urlencode($typeName)."'>删除</a>";
                     echo "&nbsp; <input type='text' name='sortrank{$id}' value='{$rank}' style='width:25px;height:20px'></td></tr></table></td></tr>\r\n";

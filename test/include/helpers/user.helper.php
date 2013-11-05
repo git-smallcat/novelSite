@@ -67,11 +67,15 @@ function GetTop($tid)
 	
 	return $top_catelog[$tid];
 }
+require_once(DEDEINC.'/typeextra.class.php');
 
-if (!function_exists('GetLastPubArticle')){
-	function GetLastPubArticle($tid){
-		
-	}
+
+function GetTypeClick($tid){
+	$typeExtra = new TypeExtra();
+	$typeExtra->typeid = $tid;
+	$typeExtra = $typeExtra->getTypeExtra($tid);
+	
+	return  isset($typeExtra->click)?$typeExtra->click:0;	
 }
 
 ?>

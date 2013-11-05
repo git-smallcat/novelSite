@@ -9,25 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=7">
 <meta http-equiv="Window-target" content="_top">
 <meta name="robots" content="all">
- <link href="{dede:global.cfg_templets_skin/}/css/index.css" type="text/css" rel="stylesheet">
- <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/index.js"></script>
+<link href="{dede:global.cfg_templets_skin/}/css/index.css" type="text/css" rel="stylesheet"/>
 
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
-<link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/favicon.ico">
-
-<script>
-function multi(pagenum,tagid)
-{
-var taget_obj = document.getElementById(tagid);
-var taget_obj_page = document.getElementById("page_"+tagid);
-myajax = new DedeAjax(taget_obj,false,false,'','','');
-myajax.SendGet2("{dede:global.cfg_cmsurl/}/plus/arcmulti.php?mtype=0&pnum="+pagenum+'&tagid='+tagid);
-myajax = new DedeAjax(taget_obj_page,false,false,'','','');
-myajax.SendGet2("{dede:global.cfg_cmsurl/}/plus/arcmulti.php?mtype=1&pnum="+pagenum+'&tagid='+tagid);
-DedeXHTTP = null;
-}
-</script>
+<link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/favicon.ico"/>
 
 </head>
 <body>
@@ -38,6 +24,7 @@ DedeXHTTP = null;
 		<div class="main">
             <div class="box box_a box_height_1">
         <!-- 主要推荐 -->
+        {dede:channel typeid='1' row='4' type='son'}
         <div class="book_Recommended">
             <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank"><img src="./images/23s.jpg" title="斗破苍穹" alt="斗破苍穹"></a></div>
             <div class="book_Recommended_text">
@@ -46,90 +33,7 @@ DedeXHTTP = null;
                 <div class="Intro"><a href="http://www.doupocangqiong1.com/" title="斗破苍穹" target="_blank">    这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！想要知道异界的斗气在发...</a></div>
             </div>
         </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.zhetian.org/" title="遮天" target="_blank"><img src="./images/22s.jpg" title="遮天" alt="遮天"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.zhetian.org/" title="遮天" target="_blank">遮天</a></h1>
-                <div class="author">作者：辰东</div>
-                <div class="Intro"><a href="http://www.zhetian.org/" title="遮天" target="_blank">    冰冷与黑暗并存的宇宙深处，九具庞大的龙尸拉着一口青铜古棺，亘古长存。这是太空探测器在枯寂的宇宙...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank"><img src="./images/371s.jpg" title="斗破苍穹续集" alt="斗破苍穹续集"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank">斗破苍穹续集</a></h1>
-                <div class="author">作者：斗破苍穹 斗破苍穹续集</div>
-                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcqxj/" title="斗破苍穹续集" target="_blank">将不断推出斗破最新大集合，一部连载完接一部，让好看不断！ 
-苍穹续本，再创辉煌。 
-斗帝空间，谁主沉...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank"><img src="./images/34s.jpg" title="凡人修仙传" alt="凡人修仙传"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank">凡人修仙传</a></h1>
-                <div class="author">作者：忘语</div>
-                <div class="Intro"><a href="http://www.frxxz.org/" title="凡人修仙传" target="_blank">    一个普通山村小子，偶然下进入到当地江湖小门派，成了一名记名弟子。他以这样身份，如何在门派中立足...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank"><img src="./images/26s.jpg" title="斗破苍穹续集之再破苍穹" alt="斗破苍穹续集之再破苍穹"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank">斗破苍穹续集之再破苍穹</a></h1>
-                <div class="author">作者：李癫疯</div>
-                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcqxjzzpcq/" title="斗破苍穹续集之再破苍穹" target="_blank">    五帝破空，新的世界，一路拼搏，弑神灭帝，血雨腥风，擎天捍地，震动六合，问鼎乾坤，再踏巅峰，破神...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank"><img src="./images/25s.jpg" title="吞噬星空" alt="吞噬星空"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank">吞噬星空</a></h1>
-                <div class="author">作者：我吃西红柿</div>
-                <div class="Intro"><a href="http://www.tunsxk.com/" title="吞噬星空" target="_blank">    一个武者主宰的地球，人类和野兽都开始了新的进化，残酷的生死战斗从此揭开。地球的各个角落危机四伏...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank"><img src="./images/37s.jpg" title="神印王座" alt="神印王座"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank">神印王座</a></h1>
-                <div class="author">作者：唐家三少</div>
-                <div class="Intro"><a href="http://www.qtshu.com/sywz/" title="神印王座" target="_blank">    魔族强势，在人类即将被灭绝之时，六大圣殿崛起，带领着人类守住最后的领土。一名少年，为救母加入骑...</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank"><img src="./images/36s.jpg" title="武动乾坤" alt="武动乾坤"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank">武动乾坤</a></h1>
-                <div class="author">作者：天蚕土豆</div>
-                <div class="Intro"><a href="http://www.qtshu.com/wdqk/" title="武动乾坤" target="_blank">    修炼一途，乃窃阴阳，夺造化，转涅盘，握生死，掌轮回。武之极，破苍穹，动乾坤！</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.swang8.com/" title="圣王" target="_blank"><img src="./images/33s.jpg" title="圣王" alt="圣王"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.swang8.com/" title="圣王" target="_blank">圣王</a></h1>
-                <div class="author">作者：梦入神机</div>
-                <div class="Intro"><a href="http://www.swang8.com/" title="圣王" target="_blank">    圣者以脊梁撑起天堂中的诸神，王者以力量镇压地狱中的群魔，天地之间，唯有圣王。</a></div>
-            </div>
-        </div>
-        
-        <div class="book_Recommended">
-            <div class="book_Recommended_img"><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank"><img src="./images/nocover.jpg" title="斗破苍穹2" alt="斗破苍穹2"></a></div>
-            <div class="book_Recommended_text">
-                <h1><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank">斗破苍穹2</a></h1>
-                <div class="author">作者：唐空</div>
-                <div class="Intro"><a href="http://www.doupocangqiong1.com/dpcq2/" title="斗破苍穹2" target="_blank">萧炎带领着众人来到了一片新的世界&lt;br /&gt;22种异火齐聚一身&lt;br /&gt;帝火出现&lt;br /&gt;！&lt;br /&gt;焚绝究竟是谁所创？&lt;br /&gt;萧...</a></div>
-            </div>
-        </div>
-        
+        {/dede:channel}
                 <div class="clear"></div>
 </div>
 		</div>
@@ -195,7 +99,7 @@ DedeXHTTP = null;
 			<h2>小说阅读网 好看的小说 最近更新</h2>
 			<div class="colmain">
 			
-			{dede:arclist  titlelen=42 row='16' typeid='1' onearctype='Y' getall}
+			{dede:arclist  titlelen=42 row='14' typeid='1' onearctype='Y' getall}
 								
 				<ul>
 					<li class="ro0">[<a href="[field:typeid Function='GetTopLink(@me)'/]" target="_blank" title="[field:typeid Function='GetTopName(@me)'/]">[field:typeid Function='GetTopName(@me)'/]</a>]</li>
